@@ -1,15 +1,21 @@
--
 import requests
-
-payload = {'key1': 'value1', 'key2': 'value2'}
-
-r = requests.post("http://httpbin.org/post", data=payload)
+import base64
 
 
-url = 'http://httpbin.org/post'
-files = {'file': open('report.xls', 'rb')}
+#file = filepath of image on pi
+#image = open(file, 'rb')
+#image_read = image.read()
+#image_64_encode = base64.encodestring(image_read)
 
-r = requests.post(url, files=files)
+image_data = {'image_b64': image_64_encode}
+
+url = 'http://vcm-1856.vm.duke.edu:5900/ClientMelanomaData'
+
+r = requests.post(url, data=image_data)
+
+
+
+
 
 # r.text
 # {
