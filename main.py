@@ -11,17 +11,24 @@ import os
 #image_64_encode = base64.encodestring(image_read)
 #assumes 1 image is sent at a time
 
-# encoded an image file to base64
-with open('melanoma_test2.jpg', 'rb') as image_file:
-    image_64_encode = base64.b64encode(image_file.read())
-
-# storing image data into a dictionary
+# initializing dictionary for image data
 image_data = {}
-
-image_data["test_image"] = image_64_encode
 
 #end point URL
 url = 'http://vcm-1856.vm.duke.edu:5900/jawad'
+
+# encoded an image file to base64
+image_directory = '/media/usbstick/Melanoma Images/'
+files = glob.glob('/media/usbstick/Melanoma Images/'+'*.jpg')
+
+#glob to extract all image files
+
+for img in files:
+    with open(img, 'rb') as image_read:
+        image_64_encode = base64.b64encode(image_read.read())
+        image_data["test_image"].append(image_64_encode)
+
+
 
 r = requests.post(url, json=image_data)
 
