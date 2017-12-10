@@ -1,6 +1,8 @@
 import requests
 import base64
-import watchdog
+import glob
+import os
+#import watchdog
 
 
 #file = filepath of image on pi
@@ -9,11 +11,19 @@ import watchdog
 #image_64_encode = base64.encodestring(image_read)
 #assumes 1 image is sent at a time
 
-image_data = {'image_b64': image_64_encode}
+# encoded an image file to base64
+with open('melanoma_test2.jpg', 'rb') as image_file:
+    image_64_encode = base64.b64encode(image_file.read())
 
-url = 'http://vcm-1856.vm.duke.edu:5900/ClientMelanomaData'
+# storing image data into a dictionary
+image_data = {}
 
-r = requests.post(url, data=image_data)
+image_data["test_image"] = image_64_encode
+
+#end point URL
+url = 'http://vcm-1856.vm.duke.edu:5900/jawad'
+
+r = requests.post(url, json=image_data)
 
 
 
