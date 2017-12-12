@@ -46,7 +46,7 @@ headers = "% Malignant, % Benign/n"
 results = result_data[1]['prediction']
 c = 0
 
-results_file = open('diagnosis.csv', 'w')
+results_file = open('/media/usbstick/diagnosis.csv', 'w')
 results_file.write(headers)
 
 for x in range(0, len(results_data)-1):
