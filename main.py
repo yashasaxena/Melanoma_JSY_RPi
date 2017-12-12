@@ -17,7 +17,7 @@ import csv
 image_data = {}
 
 #end point URL
-url = 'http://vcm-1856.vm.duke.edu:5900/jawad'
+url = 'http://vcm-1856.vm.duke.edu:5900/CloudMelanomaData'
 
 # encoded an image file to base64
 image_directory = '/media/usbstick/Melanoma Images/'
