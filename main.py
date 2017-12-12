@@ -51,7 +51,7 @@ results_file.write(headers)
 
 for x in range(0, len(results_data)-1):
     key = 'prediction' + str(c)
-    row = results_data[x+1][key][0] + ',' results_data[x+1][key][1]
+    row = results_data[x+1][key][0] + ',' + results_data[x+1][key][1]
     csv.write(row)
     c = c+1
 
