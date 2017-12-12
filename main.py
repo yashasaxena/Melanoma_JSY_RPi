@@ -36,9 +36,9 @@ for img in files:
         c = c + 1
 
 # store post request data in variable r
-r = requests.post(url, json=image_data)
+r = requests.post(url, json=image_data).json()
 
-result_data = r.json()
+result_data = r
 
 # writing results from json results to a csv file
 
