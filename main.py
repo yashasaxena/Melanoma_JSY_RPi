@@ -32,7 +32,7 @@ for img in files:
         image_64_encode = base64.b64encode(image_read.read())
     #image_64_encode_bytes = image_64_encode.decode('utf-8')
     image_key = "image" + str(c)
-    image_data[image_key] = [image_64_encode_bytes]
+    image_data[image_key] = [image_64_encode]
     c = c + 1
 
 # store post request data in variable r
