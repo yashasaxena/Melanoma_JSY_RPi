@@ -28,7 +28,7 @@ files = glob.glob('/media/usbstick/Melanoma Images/'+'*.jpg')
 c = 0
 
 for img in files:
-    with open(img, 'r') as image_read:
+    with open(img, 'rb') as image_read:
         image_64_encode = base64.b64encode(image_read.read())
     image_64_encode_bytes = image_64_encode.encode('utf-8')
     image_key = "image" + str(c)
