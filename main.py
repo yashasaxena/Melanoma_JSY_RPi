@@ -27,6 +27,7 @@ files = glob.glob('/media/usbstick/Melanoma Images/'+'*.jpg')
 
 c = 0
 
+#crediting niranjana for this image dumping/dictionary serializing method
 for img in files:
     with open(img, 'rb') as image_read:
         image_64_encode = base64.b64encode(image_read.read())
